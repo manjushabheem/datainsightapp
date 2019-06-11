@@ -1,0 +1,117 @@
+@import "_global/styles/variables.scss";
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+body {
+  //min-width: 1000px;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 12px;
+  background: #ffffff;
+  //overflow-y:hidden;
+ 
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
+
+.container {
+  width: 1220px;
+}
+
+.dc-app {
+  //min-width: 1200px;
+  //max-width: 1600px;
+  margin: 0 auto;
+}
+  @media (min-width:$breakpoint-laptop){
+    .dc-app{
+      width:100%;
+      margin:0px;
+
+    }
+  }
+.appContainer{
+  width:100%;
+  background-color: #fff;
+}
+  .mainFlex {
+    max-width: 100%;
+    //display: flex;
+    //justify-content: center;
+    min-height: calc(100vh - 100px);
+
+    .contents {
+      //min-width: 1190px;
+      min-width: 82.63%; //1190px;
+      display: inline-block;
+      background-color: $background-color;
+      margin-left: 50px;
+
+      .inner-contents {
+       // max-width: 100%;
+        min-width: 82.63%;
+        min-height: 850px;//1000px;
+        padding: 12px 25px 0 10px;
+      }
+
+      // &.datasheet {
+      //   display: flex;
+      //   .inner-contents {
+      //     display: flex;
+      //     flex-direction: column;
+      //   }
+      // }
+
+      &.datasheetExpanded {
+        padding: 0;
+        margin-left: 0;
+
+        .inner-contents {
+          padding:0;
+
+          .chartSection {
+            width: 100%;
+            .SummaryTable.expanded {
+              width: 100% !important;
+            }
+          }
+        }
+      }
+    }
+    .Test {
+      .contents {
+        width: 100%;
+      }
+    }
+  }
+
+  /*media queries for min-width:1400px*/
+@media (min-width:$breakpoint-tablet) and (max-width:$breakpoint-largeScreens){
+  .dc-app{
+    justify-content: center;
+  }
+}
+
+/* reducing inner content guttter margin for 1200px */
+@media (min-width:1200px) and (max-width:1279px){
+  .mainFlex .contents .inner-contents{
+    padding-left: 0px;
+  }
+}
